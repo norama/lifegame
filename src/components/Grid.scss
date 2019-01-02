@@ -1,0 +1,7 @@
+rect {
+    cursor: pointer;
+
+    &.alive {
+        fill: red;
+    }
+}
