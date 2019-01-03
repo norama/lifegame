@@ -1,3 +1,11 @@
+.Grid__root {
+    display: flex;
+
+    & svg {
+        margin: auto;
+    }
+}
+
 rect {
     cursor: pointer;
 

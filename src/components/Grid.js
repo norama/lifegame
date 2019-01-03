@@ -21,13 +21,20 @@ const Grid = ({ n, m }) => {
     const height = m * size + (m + 1) * gap;
 
     return (
-        <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} xmlns="http://www.w3.org/2000/svg">
-            {cells.map((row, i) => (<> {
-                row.map((cell, j) => (
-                    <Rect i={i} j={j} />
-                ))
-            } </>))}
-        </svg>
+        <div className="Grid__root">
+            <svg
+                width={width}
+                height={height}
+                viewBox={`0 0 ${width} ${height}`}
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                {cells.map((row, i) => (<React.Fragment key={i}> {
+                    row.map((cell, j) => (
+                        <Rect i={i} j={j} key={'' + i + '-' + j} />
+                    ))
+                } </React.Fragment>))}
+            </svg>
+        </div>
     );
 };
 
@@ -41,7 +48,7 @@ const Rect = ({i, j}) => {
     };
   
     return (
-        <rect
+        <rect key={'' + i + '-' + j}
             x={j * size + (j + 1) * gap}
             y={i * size + (i + 1) * gap}
             width={size}

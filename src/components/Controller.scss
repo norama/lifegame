@@ -1,0 +1,37 @@
+.Controller__root {
+    display: flex;
+
+    & .Controller__panel {
+        margin: 20px auto;
+        display: flex;
+
+        & i {
+            font-size: 48px;
+            cursor: pointer;
+
+            &:first-of-type {
+                margin-left: auto;
+            }
+
+            &:last-of-type {
+                margin-right: auto;
+            }
+
+            &:not(:first-of-type) {
+                margin-left: 30px;
+            }
+
+            &.fa-play-circle {
+                color: #007ACC;
+            }
+
+            &.fa-stop-circle {
+                color: darkred;
+            }
+
+            &.fa-times-circle {
+                color: darkslategrey;
+            }
+        }
+    }
+}
