@@ -3,9 +3,6 @@ import { useState } from 'react';
 
 import './Grid.scss';
 
-const size = 20;
-const gap = 4;
-
 const Grid = ({ n, m }) => {
 
     let cells = [];
@@ -17,29 +14,23 @@ const Grid = ({ n, m }) => {
         cells.push(row);
     }
 
-    const width = n * size + (n + 1) * gap;
-    const height = m * size + (m + 1) * gap;
-
     return (
         <div className="Grid__root">
-            <svg
-                width={width}
-                height={height}
-                viewBox={`0 0 ${width} ${height}`}
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                {cells.map((row, i) => (<React.Fragment key={i}> {
+            <table>
+                <tbody>
+                {cells.map((row, i) => (<tr key={i}> {
                     row.map((cell, j) => (
-                        <Rect i={i} j={j} key={'' + i + '-' + j} />
+                        <td><Cell i={i} j={j} key={'' + i + '-' + j} /></td>
                     ))
-                } </React.Fragment>))}
-            </svg>
+                } </tr>))}
+                </tbody>
+            </table>
         </div>
     );
 };
 
 
-const Rect = ({i, j}) => {
+const Cell = ({i, j}) => {
 
     const [alive, setAlive] = useState(false);
 
@@ -48,14 +39,7 @@ const Rect = ({i, j}) => {
     };
   
     return (
-        <rect key={'' + i + '-' + j}
-            x={j * size + (j + 1) * gap}
-            y={i * size + (i + 1) * gap}
-            width={size}
-            height={size}
-            onClick={handleClick}
-            className={alive ? "alive" : ""}
-        />
+        <i className={"fas fa-square-full" + (alive ? " alive" : "")} onClick={handleClick}></i>
     )
 };
 

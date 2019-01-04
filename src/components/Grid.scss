@@ -1,15 +1,19 @@
 .Grid__root {
     display: flex;
 
-    & svg {
+    & table {
         margin: auto;
+        border-collapse: separate;
+        border-spacing: 4px; 
+        font-size: 20px;
+        line-height: 1;
     }
 }
 
-rect {
+td i {
     cursor: pointer;
 
     &.alive {
-        fill: red;
+        color: red;
     }
 }
