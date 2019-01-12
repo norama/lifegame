@@ -1,11 +1,13 @@
 .Grid__root {
     display: flex;
+    background-color: darkgrey;
+    padding: 20px 0;
 
     & table {
         margin: auto;
         border-collapse: separate;
-        border-spacing: 4px; 
-        font-size: 20px;
+        border-spacing: 0.25px; 
+        font-size: 16px;
         line-height: 1;
     }
 }

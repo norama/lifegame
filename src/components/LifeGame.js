@@ -36,8 +36,6 @@ const LifeGame = () => {
         <div className='LifeGame__root'>
             <Title generation={generation} />
             <Grid
-                n={3}
-                m={5}
                 algorithm={algorithm}
                 action={action}
                 onAction={setAction}

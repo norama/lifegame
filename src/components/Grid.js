@@ -1,20 +1,21 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
+import Settings from '../settings';
 import Actions from '../constants/actions';
 
 import './Grid.scss';
 
-const Grid = ({ n, m, algorithm, action, onAction, onFirst, onNext }) => {
+const Grid = ({ algorithm, action, onAction, onFirst, onNext }) => {
 
-    const [cells, setCells] = useState(nullCells(n, m));
+    const [cells, setCells] = useState(nullCells());
     const [changedCount, setChangedCount] = useState(0);
     const [playProcess, setPlayProcess] = useState(null);
 
     useEffect(() => {
 
         const init = () => {
-            setCells(nullCells(n, m));
+            setCells(nullCells());
             setChangedCount(0);
             onFirst();
         };
@@ -85,11 +86,11 @@ const Grid = ({ n, m, algorithm, action, onAction, onFirst, onNext }) => {
     );
 };
 
-const nullCells = (n, m) => {
+const nullCells = () => {
     let cells = [];
-    for (let i=0; i < m; ++i) {
+    for (let i=0; i < Settings.rows; ++i) {
         let row = [];
-        for (let j=0; j < n; ++j) {
+        for (let j=0; j < Settings.cols; ++j) {
             row.push(0);
         }
         cells.push(row);
