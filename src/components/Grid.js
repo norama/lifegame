@@ -57,7 +57,7 @@ const nullCells = (n, m) => {
 }
 
 
-const Cell = ({changed, i, j, value, onChange}) => {
+const Cell = ({i, j, value, onChange}) => {
 
     const handleClick = () => {
         onChange(i, j);

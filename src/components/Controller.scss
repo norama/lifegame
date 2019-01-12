@@ -7,7 +7,15 @@
 
         & i {
             font-size: 48px;
-            cursor: pointer;
+
+            &.enabled {
+                cursor: pointer;
+                opacity: 1;
+            }
+            &.disabled {
+                cursor: default;
+                opacity: 0.7;
+            }
 
             &:first-of-type {
                 margin-left: auto;
@@ -27,6 +35,10 @@
 
             &.fa-stop-circle {
                 color: darkred;
+            }
+
+            &.fa-shoe-prints {
+                color: darkgreen;
             }
 
             &.fa-times-circle {

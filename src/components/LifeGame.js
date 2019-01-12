@@ -26,7 +26,7 @@ const LifeGame = () => {
         <div className='LifeGame__root'>
             <Title generation={generation} />
             <Grid n={3} m={5} action={action} onAction={setAction} />
-            <Controller onAction={setAction} />
+            <Controller action={action} onAction={setAction} />
             <Config config={config} onChange={setConfig} />
         </div>
     );
