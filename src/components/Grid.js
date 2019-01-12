@@ -1,10 +1,50 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+import Actions from '../constants/actions';
 
 import './Grid.scss';
 
-const Grid = ({ n, m }) => {
+const Grid = ({ n, m, action, onAction }) => {
 
+    const [cells, setCells] = useState(nullCells(n, m));
+    const [changedCount, setChangedCount] = useState(0);
+
+    useEffect(() => {
+        if (action === Actions.CLEAR) {
+            setCells(nullCells(n, m));
+            setChangedCount(0);
+            onAction(Actions.START);
+        }
+    });
+
+    const handleCellChange = (i, j) => {
+        cells[i][j] = 1 - cells[i][j];
+        setChangedCount(changedCount + 1);
+    }
+
+    return (
+        <div className="Grid__root">
+            <table>
+                <tbody>
+                {cells.map((row, i) => (<tr key={i}>{
+                    row.map((value, j) => (
+                        <td key={'(' + i + ',' + j + ')'}>
+                            <Cell
+                                i={i}
+                                j={j}
+                                value={value}
+                                onChange={handleCellChange}
+                            />
+                        </td>))
+                }</tr>))}
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
+const nullCells = (n, m) => {
     let cells = [];
     for (let i=0; i < m; ++i) {
         let row = [];
@@ -13,33 +53,18 @@ const Grid = ({ n, m }) => {
         }
         cells.push(row);
     }
-
-    return (
-        <div className="Grid__root">
-            <table>
-                <tbody>
-                {cells.map((row, i) => (<tr key={i}> {
-                    row.map((cell, j) => (
-                        <td><Cell i={i} j={j} key={'' + i + '-' + j} /></td>
-                    ))
-                } </tr>))}
-                </tbody>
-            </table>
-        </div>
-    );
-};
+    return cells;
+}
 
 
-const Cell = ({i, j}) => {
-
-    const [alive, setAlive] = useState(false);
+const Cell = ({changed, i, j, value, onChange}) => {
 
     const handleClick = () => {
-        setAlive(!alive);
+        onChange(i, j);
     };
   
     return (
-        <i className={"fas fa-square-full" + (alive ? " alive" : "")} onClick={handleClick}></i>
+        <i className={"fas fa-square-full" + (value ? " alive" : "")} onClick={handleClick}></i>
     )
 };
 
