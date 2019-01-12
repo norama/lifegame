@@ -9,6 +9,7 @@
             display: flex;
             width: 60px;
             margin: 0 10px 0 auto;
+            opacity: 0.9;
         }
 
         & .Config__row {
@@ -16,9 +17,10 @@
             margin-bottom: 20px;
         }
 
-        & .Config__placeholder {
+        & .Config__label {
             width: 60px;
-            margin: 0 auto 0 10px;
+            height: fit-content;
+            margin: 5px auto 0 10px;
         }
 
         & i {

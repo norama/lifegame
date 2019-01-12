@@ -90,7 +90,9 @@ const ConfigPanel = ({ min, max, type, onChange }) => {
                     className="select"
                 />
             </div>
-            <div className="Config__placeholder"></div>
+            <div className="Config__label">
+                {type === Types.NEW ? "Birth" : "Survive"}
+            </div>
         </div>
     );
 };

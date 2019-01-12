@@ -1,0 +1,25 @@
+.Title__root {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    font-size: 1.5rem;
+
+    & .Title__label {
+        display: flex;
+        width: fit-content;
+        text-align: right;
+    }
+
+    & .Title__value {
+        display: flex;
+        margin: 0 auto 0 10px;
+        width: 4em;
+        text-align: left;
+    }
+
+    & .Title__placeholder {
+        display: flex;
+        margin: 0 10px 0 auto;
+        width: 4em;
+    }
+}

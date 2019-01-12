@@ -1,9 +1,13 @@
 import React from 'react';
 
-import './Title.css';
+import './Title.scss';
 
 const Title = ({ generation }) => (
-    <h2>Generation: {generation}</h2>
+    <div className="Title__root">
+        <div className="Title__placeholder"/>
+        <div className="Title__label">Generation:</div>
+        <div className="Title__value">{generation}</div>
+    </div>
 );
 
 export default Title;
