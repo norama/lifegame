@@ -8,10 +8,10 @@ import './Controller.scss';
 
 const Controller = ({ action, onAction }) => {
 
-    const handleClear = () => { onAction(Actions.CLEAR); };
+    const handleClear = () => { if (action !== Actions.PLAY) { onAction(Actions.CLEAR); } };
     const handleStop = () => { onAction(Actions.STOP); };
     const handlePlay = () => { onAction(Actions.PLAY); };
-    const handleStep = () => { onAction(Actions.STEP); };
+    const handleStep = () => { if (action !== Actions.PLAY) { onAction(Actions.STEP); } };
 
     const classStop = "far fa-stop-circle enabled";
     const classPlay = "far fa-play-circle enabled";

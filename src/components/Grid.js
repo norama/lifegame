@@ -5,22 +5,63 @@ import Actions from '../constants/actions';
 
 import './Grid.scss';
 
-const Grid = ({ n, m, action, onAction }) => {
+const Grid = ({ n, m, algorithm, action, onAction, onFirst, onNext }) => {
 
     const [cells, setCells] = useState(nullCells(n, m));
     const [changedCount, setChangedCount] = useState(0);
+    const [playProcess, setPlayProcess] = useState(null);
 
     useEffect(() => {
-        if (action === Actions.CLEAR) {
+
+        const init = () => {
             setCells(nullCells(n, m));
             setChangedCount(0);
-            onAction(Actions.START);
+            onFirst();
+        };
+
+        const step = () => {
+            setCells(algorithm.step(cells));
+            setChangedCount(changedCount => changedCount + 1);
+            onNext();
+        };
+
+        switch (action) {
+            case Actions.CLEAR:
+                init();
+                onAction(Actions.START);
+                break;
+
+            case Actions.STEP:
+                step();
+                onAction(Actions.START);
+                break;
+
+            case Actions.PLAY:
+                const process = setInterval(() => {
+                    if (action === Actions.PLAY) {
+                        step();
+                    }
+                }, 2000);
+                setPlayProcess(process);
+                break;
+
+            case Actions.STOP:
+                if (playProcess) {
+                    clearInterval(playProcess);
+                    setPlayProcess(null);
+                }
+                onAction(Actions.START);
+                break;
+
+            default:
+                return;
         }
-    });
+    }, [action]);
 
     const handleCellChange = (i, j) => {
         cells[i][j] = 1 - cells[i][j];
-        setChangedCount(changedCount + 1);
+        setChangedCount(changedCount => changedCount + 1);
+        onFirst();
     }
 
     return (
@@ -62,7 +103,7 @@ const Cell = ({i, j, value, onChange}) => {
     const handleClick = () => {
         onChange(i, j);
     };
-  
+
     return (
         <i className={"fas fa-square-full" + (value ? " alive" : "")} onClick={handleClick}></i>
     )
