@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Table of Contents
 
 - [Description](#description)
+- [Usage](#usage)
 - [Demo](#demo)
 - [Available Scripts](#available-scripts)
   - [yarn start](#yarn-start)
@@ -17,9 +18,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This is a sample implmentation of [Conway's famous Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 The implementation uses [React Hooks](https://reactjs.org/docs/hooks-intro.html).
-Actuallz, the main motivation for this project is experimenting with this new feature of [React](https://reactjs.org/).
+Actually the main motivation for this project is experimenting with this new feature of [React](https://reactjs.org/).
 
 Work in progress...
+
+## Usage
+
+1. Set Birth / Survival min-max parameters.
+   Optional: settings of the original Conway game are set by default.
+
+2. Set starting population by clicking on the cells to make them alive.
+
+3. Click on the PLAY - STOP button to start - stop continuous process,
+   or click on the STEP (footprint) button repeatedly to proceed step-by-step.
+
+4. Click on the CLEAR button (X) to clear the board.
 
 ## Demo
 
