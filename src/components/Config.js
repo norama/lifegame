@@ -91,7 +91,7 @@ const ConfigPanel = ({ min, max, type, onChange }) => {
                 />
             </div>
             <div className="Config__label">
-                {type === Types.NEW ? "Birth" : "Survive"}
+                {type === Types.NEW ? "Birth" : "Survival"}
             </div>
         </div>
     );

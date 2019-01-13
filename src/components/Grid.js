@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
+import Settings from '../settings';
 import Actions from '../constants/actions';
 
 import './Grid.scss';
@@ -20,7 +21,7 @@ const Grid = ({ algorithm, action, onAction, onFirst, onNext }) => {
         };
 
         const step = () => {
-            setCells(algorithm.step(cells));
+            setCells(cells => algorithm.step(cells));
             setChangedCount(changedCount => changedCount + 1);
             onNext();
         };
@@ -41,7 +42,7 @@ const Grid = ({ algorithm, action, onAction, onFirst, onNext }) => {
                     if (action === Actions.PLAY) {
                         step();
                     }
-                }, 2000);
+                }, Settings.playTimeout);
                 setPlayProcess(process);
                 break;
 
