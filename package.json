@@ -1,10 +1,12 @@
 {
   "name": "lifegame",
+  "homepage": "https://norama.github.io/lifegame",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.2.1",
     "classnames": "^2.2.6",
+    "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
     "react": "16.7.0-alpha.2",
@@ -14,6 +16,8 @@
     "reactstrap": "^7.0.2"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
