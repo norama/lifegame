@@ -6,7 +6,7 @@ import Actions from '../constants/actions';
 
 import './Grid.scss';
 
-const Grid = ({ algorithm, action, onAction, onFirst, onNext }) => {
+const Grid = ({ caption, algorithm, action, onAction, onFirst, onNext }) => {
 
     const [cells, setCells] = useState(algorithm.newCells());
     const [changedCount, setChangedCount] = useState(0);
@@ -67,21 +67,24 @@ const Grid = ({ algorithm, action, onAction, onFirst, onNext }) => {
 
     return (
         <div className="Grid__root">
-            <table>
-                <tbody>
-                {cells.map((row, i) => (<tr key={i}>{
-                    row.map((value, j) => (
-                        <td key={'(' + i + ',' + j + ')'}>
-                            <Cell
-                                i={i}
-                                j={j}
-                                value={value}
-                                onChange={handleCellChange}
-                            />
-                        </td>))
-                }</tr>))}
-                </tbody>
-            </table>
+            <div className="Grid__panel">
+                <table>
+                    <caption className="Grid__caption">{caption}</caption>
+                    <tbody>
+                        {cells.map((row, i) => (<tr key={i}>{
+                            row.map((value, j) => (
+                                <td key={'(' + i + ',' + j + ')'}>
+                                    <Cell
+                                        i={i}
+                                        j={j}
+                                        value={value}
+                                        onChange={handleCellChange}
+                                    />
+                                </td>))
+                        }</tr>))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

@@ -1,14 +1,30 @@
 .Grid__root {
     display: flex;
+    width: fit-content;
     background-color: darkgrey;
-    padding: 20px 0;
+    padding: 20px;
 
-    & table {
+    & .Grid__panel {
+        display: flex;
         margin: auto;
-        border-collapse: separate;
-        border-spacing: 0.25px; 
-        font-size: 16px;
-        line-height: 1;
+
+        & table {
+
+            & .Grid__caption {
+                width: 100%;
+                caption-side: top;
+                text-align: center;
+                font-weight: 600;
+                color: black;
+                opacity: 0.8;
+                padding-top: 0;
+            }
+            margin: auto;
+            border-collapse: separate;
+            border-spacing: 0.2px; 
+            font-size: 14px;
+            line-height: 1;
+        }
     }
 }
 

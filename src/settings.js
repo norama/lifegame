@@ -1,6 +1,6 @@
 const Settings = {
-    rows: 20,
-    cols: 50,
+    rows: 60,
+    cols: 60,
     playTimeout: 1000
 };
 

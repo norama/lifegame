@@ -34,15 +34,15 @@ const LifeGame = () => {
 
     return (
         <div className='LifeGame__root'>
-            <Title generation={generation} />
+            <Controller action={action} onAction={setAction} />
             <Grid
+                caption={<Title generation={generation} />}
                 algorithm={algorithm}
                 action={action}
                 onAction={setAction}
                 onFirst={handleFirst}
                 onNext={handleNext}
             />
-            <Controller action={action} onAction={setAction} />
             <Config config={config} onChange={setConfig} />
         </div>
     );
