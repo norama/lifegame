@@ -27,6 +27,25 @@ const Grid = ({ caption, algorithm, action, onAction, onFirst, onNext }) => {
             onNext();
         };
 
+        const startPlayProcess = () => {
+            setPlayProcess(playProcess => playProcess ? playProcess :
+                setInterval(() => {
+                    if (action === Actions.PLAY) {
+                        step();
+                    }
+                }, Settings.playTimeout)
+            );
+        };
+
+        const stopPlayProcess = () => {
+            setPlayProcess(playProcess => {
+                if (playProcess) {
+                    clearInterval(playProcess);
+                }
+                return null;
+            });
+        };
+
         switch (action) {
             case Actions.CLEAR:
                 init();
@@ -39,25 +58,17 @@ const Grid = ({ caption, algorithm, action, onAction, onFirst, onNext }) => {
                 break;
 
             case Actions.PLAY:
-                const process = setInterval(() => {
-                    if (action === Actions.PLAY) {
-                        step();
-                    }
-                }, Settings.playTimeout);
-                setPlayProcess(process);
+                startPlayProcess();
                 break;
 
             case Actions.STOP:
-                if (playProcess) {
-                    clearInterval(playProcess);
-                    setPlayProcess(null);
-                }
-                onAction(Actions.START);
+                stopPlayProcess();
                 break;
 
             default:
-                return;
+                break;
         }
+        return stopPlayProcess;
     }, [action]);
 
     const handleCellChange = (i, j) => {

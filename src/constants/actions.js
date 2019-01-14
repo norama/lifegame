@@ -3,6 +3,7 @@ const Actions = {
     CLEAR: 1,
     STEP: 2,
     PLAY: 3,
+    STOP: 4
 };
 
 export default Actions;
