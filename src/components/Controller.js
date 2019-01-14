@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 import classNames from 'classnames';
 
@@ -30,6 +31,11 @@ const Controller = ({ action, onAction }) => {
             </div>
         </div>
     );
+};
+
+Controller.propTypes = {
+    action: PropTypes.oneOf(Object.values(Actions)).isRequired,
+    onAction: PropTypes.func.isRequired
 };
 
 export default Controller;

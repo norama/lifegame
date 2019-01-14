@@ -11,7 +11,7 @@ import Actions from '../constants/actions';
 
 import './LifeGame.scss';
 
-const CONFIG = { minNew: 2, maxNew: 3, minKeep: 2, maxKeep: 3 };
+const CONFIG =  { minNew: 2, maxNew: 3, minKeep: 2, maxKeep: 3 };
 
 const LifeGame = () => {
     const [generation, setGeneration] = useState(0);

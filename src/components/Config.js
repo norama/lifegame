@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 import _ from 'lodash';
 
@@ -50,6 +51,16 @@ const Config = ({ config, onChange }) => {
             />
         </div>
     );
+};
+
+Config.propTypes = {
+    config: PropTypes.shape({
+        minNew: PropTypes.number,
+        maxNew: PropTypes.number,
+        minKeep: PropTypes.number,
+        maxKeep: PropTypes.number
+    }).isRequired,
+    onChange: PropTypes.func.isRequired
 };
 
 const ConfigPanel = ({ min, max, type, onChange }) => {

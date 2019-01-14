@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import Settings from '../settings';
 import Actions from '../constants/actions';
@@ -87,6 +88,18 @@ const Grid = ({ caption, algorithm, action, onAction, onFirst, onNext }) => {
             </div>
         </div>
     );
+};
+
+Grid.propTypes = {
+    caption: PropTypes.node.isRequired,
+    algorithm: PropTypes.shape({
+        newCells: PropTypes.func.isRequired,
+        step: PropTypes.func.isRequired
+    }).isRequired,
+    action: PropTypes.oneOf(Object.values(Actions)).isRequired,
+    onAction: PropTypes.func.isRequired,
+    onFirst: PropTypes.func.isRequired,
+    onNext: PropTypes.func.isRequired
 };
 
 const Cell = ({i, j, value, onChange}) => {
