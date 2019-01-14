@@ -1,15 +1,15 @@
 {
-  "main.css": "/lifegame/static/css/main.b18c52fc.chunk.css",
-  "main.js": "/lifegame/static/js/main.dddfdfe0.chunk.js",
-  "main.js.map": "/lifegame/static/js/main.dddfdfe0.chunk.js.map",
+  "main.css": "/lifegame/static/css/main.2b3cecf6.chunk.css",
+  "main.js": "/lifegame/static/js/main.f48a845a.chunk.js",
+  "main.js.map": "/lifegame/static/js/main.f48a845a.chunk.js.map",
   "static/css/1.04c8c4ed.chunk.css": "/lifegame/static/css/1.04c8c4ed.chunk.css",
   "static/js/1.2366ceb3.chunk.js": "/lifegame/static/js/1.2366ceb3.chunk.js",
   "static/js/1.2366ceb3.chunk.js.map": "/lifegame/static/js/1.2366ceb3.chunk.js.map",
   "runtime~main.js": "/lifegame/static/js/runtime~main.31494423.js",
   "runtime~main.js.map": "/lifegame/static/js/runtime~main.31494423.js.map",
   "static/css/1.04c8c4ed.chunk.css.map": "/lifegame/static/css/1.04c8c4ed.chunk.css.map",
-  "static/css/main.b18c52fc.chunk.css.map": "/lifegame/static/css/main.b18c52fc.chunk.css.map",
+  "static/css/main.2b3cecf6.chunk.css.map": "/lifegame/static/css/main.2b3cecf6.chunk.css.map",
   "index.html": "/lifegame/index.html",
-  "precache-manifest.377ba2caaf9421fad42a660361b34b58.js": "/lifegame/precache-manifest.377ba2caaf9421fad42a660361b34b58.js",
+  "precache-manifest.f30cf39a0397b8ef51974e6e5b6ef948.js": "/lifegame/precache-manifest.f30cf39a0397b8ef51974e6e5b6ef948.js",
   "service-worker.js": "/lifegame/service-worker.js"
 }
