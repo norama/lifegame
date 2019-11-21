@@ -69,7 +69,7 @@ const Grid = ({ caption, algorithm, action, onAction, onFirst, onNext }) => {
                 break;
         }
         return stopPlayProcess;
-    }, [action]);
+    }, [action, onAction, algorithm, onFirst, onNext]);
 
     const handleCellChange = (i, j) => {
         cells[i][j] = 1 - cells[i][j];
