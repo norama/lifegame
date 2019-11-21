@@ -1,15 +1,24 @@
 {
-  "main.css": "/lifegame/static/css/main.2b3cecf6.chunk.css",
-  "main.js": "/lifegame/static/js/main.f48a845a.chunk.js",
-  "main.js.map": "/lifegame/static/js/main.f48a845a.chunk.js.map",
-  "static/css/1.04c8c4ed.chunk.css": "/lifegame/static/css/1.04c8c4ed.chunk.css",
-  "static/js/1.2366ceb3.chunk.js": "/lifegame/static/js/1.2366ceb3.chunk.js",
-  "static/js/1.2366ceb3.chunk.js.map": "/lifegame/static/js/1.2366ceb3.chunk.js.map",
-  "runtime~main.js": "/lifegame/static/js/runtime~main.31494423.js",
-  "runtime~main.js.map": "/lifegame/static/js/runtime~main.31494423.js.map",
-  "static/css/1.04c8c4ed.chunk.css.map": "/lifegame/static/css/1.04c8c4ed.chunk.css.map",
-  "static/css/main.2b3cecf6.chunk.css.map": "/lifegame/static/css/main.2b3cecf6.chunk.css.map",
-  "index.html": "/lifegame/index.html",
-  "precache-manifest.f30cf39a0397b8ef51974e6e5b6ef948.js": "/lifegame/precache-manifest.f30cf39a0397b8ef51974e6e5b6ef948.js",
-  "service-worker.js": "/lifegame/service-worker.js"
+  "files": {
+    "main.css": "/lifegame/static/css/main.db2e34f0.chunk.css",
+    "main.js": "/lifegame/static/js/main.d2a7f404.chunk.js",
+    "main.js.map": "/lifegame/static/js/main.d2a7f404.chunk.js.map",
+    "runtime-main.js": "/lifegame/static/js/runtime-main.51461f9e.js",
+    "runtime-main.js.map": "/lifegame/static/js/runtime-main.51461f9e.js.map",
+    "static/css/2.9720967d.chunk.css": "/lifegame/static/css/2.9720967d.chunk.css",
+    "static/js/2.f2cd6ecf.chunk.js": "/lifegame/static/js/2.f2cd6ecf.chunk.js",
+    "static/js/2.f2cd6ecf.chunk.js.map": "/lifegame/static/js/2.f2cd6ecf.chunk.js.map",
+    "index.html": "/lifegame/index.html",
+    "precache-manifest.43f53f6e43649f111772e842126373cf.js": "/lifegame/precache-manifest.43f53f6e43649f111772e842126373cf.js",
+    "service-worker.js": "/lifegame/service-worker.js",
+    "static/css/2.9720967d.chunk.css.map": "/lifegame/static/css/2.9720967d.chunk.css.map",
+    "static/css/main.db2e34f0.chunk.css.map": "/lifegame/static/css/main.db2e34f0.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.51461f9e.js",
+    "static/css/2.9720967d.chunk.css",
+    "static/js/2.f2cd6ecf.chunk.js",
+    "static/css/main.db2e34f0.chunk.css",
+    "static/js/main.d2a7f404.chunk.js"
+  ]
 }
